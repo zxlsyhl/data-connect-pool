@@ -43,6 +43,9 @@ public class DruidService {
 //                while (resultSet.next()){
 //                    System.out.println("resultSet.getString(1):"+resultSet.getString(1));
 //                }
+                resultSet.close();
+                pst.close();
+                connection.close();
                 System.out.println(Thread.currentThread().getName()+":done!!!!!");
                 Thread.sleep(2000);
             }catch (Exception e){

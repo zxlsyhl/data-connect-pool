@@ -13,7 +13,7 @@ public class Test {
         for(int i=0;i<100;i++){
             poolExecutor.execute(new DbClient(i));
         }
-        poolExecutor.shutdown();
+//        poolExecutor.shutdown();
     }
 
 
@@ -34,6 +34,8 @@ public class Test {
 //                while (resultSet.next()){
 //                    System.out.println("resultSet.getString(1):"+resultSet.getString(1));
 //                }
+                resultSet.close();
+                pst.close();
                 System.out.println(Thread.currentThread().getName()+":done!!!!!");
                 Thread.sleep(2000);
             }catch (Exception e){
